@@ -1,15 +1,10 @@
 # vue-project
 
-This template should help get you started developing with Vue 3 in Vite.
+Personal project 
 
-## Recommended IDE Setup
+[VueJS](https://vuejs.org/) & [Axios](https://axios-http.com/docs/intro)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
+API used : [Hub'Eau](https://hubeau.eaufrance.fr/page/apis)
 ## Project Setup
 
 ```sh
