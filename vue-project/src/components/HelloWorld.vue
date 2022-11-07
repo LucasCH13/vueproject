@@ -1,30 +1,34 @@
 <script>
 import { computed } from '@vue/reactivity';
 import axios from 'axios'
+import { ref } from 'vue'
+import EcoulementAPI from '../services/EcoulementAPI'
+
 
 /* Création du components*/
 
 export default {
     name: 'HelloWorld',
-    data(){
-        return {
-            station: undefined
-
+    setup() {
+        
+        let station = ref('')
+        
+        const loadRequest = async () => {
+            try {
+                    let response = await EcoulementAPI.getEcoulement()
+                    station.value = response.data.data;
+                    
+            }
+            catch(err) {
+                    console.log(err)
+                }
+            console.log(station);
+        
         }
-    },
-    
-    mounted() {
-        axios
-        .get('https://hubeau.eaufrance.fr/api/vbeta/ecoulement/observations?format=json&code_departement=04&size=20')
-        .then((response) => {
-            this.station = response.data.data;
-            console.log(response.data.data);
-        })
-    },
-    computed: {
-        //getter
-        getStation() {
-            return this.station
+            loadRequest()
+
+        return {
+            station
         }
     }
 }
@@ -34,8 +38,10 @@ export default {
    
     <div id="content">
         <h1>Liste des stations </h1>
-        {{getstation}}
-
+        <p>
+            
+        </p>
+                
     </div>
     
   
